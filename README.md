@@ -581,7 +581,7 @@ Java Full Stack Developer | Machine Learning Enthusiast
 
 📧 Email:
 
-[sai9kamal9799@gmail.com](mailto:sai9kamal9799@gmail.com)
+[vankasaichandrika@gmail.com](mailto:vankasaichandrika@gmail.com)
 
 ### LinkedIn
 
@@ -597,7 +597,7 @@ https://www.linkedin.com/in/your-profile/
 
 If you have any suggestions, improvements, or collaboration opportunities, feel free to connect with me.
 
-📧 Email: [sai9kamal9799@gmail.com](mailto:sai9kamal9799@gmail.com)
+📧 Email: [vankasaichandrika@gmail.com](mailto:vankasaichandrika@gmail.com)
 
 ---
 
