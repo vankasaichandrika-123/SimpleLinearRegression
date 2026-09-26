@@ -1,614 +1,572 @@
-# SimpleLinearRegression
-# 📈 Simple Linear Regression Salary Prediction Project
+ML_HEART_project
 
-## 🚀 Project Overview
+❤️ Heart Disease Prediction Machine Learning Project
 
-This project demonstrates the implementation of a **Simple Linear Regression Machine Learning Model** using **Python**, **Scikit-Learn**, and **Flask**.
+🚀 Project Overview
 
-The objective of this project is to predict the **Salary** of a person based on their **Years of Experience**.
+This project is a Machine Learning classification application that analyzes heart-disease data and predicts the target outcome using multiple classification algorithms.
 
-The project covers the complete Machine Learning lifecycle:
+The project covers the complete Machine Learning workflow:
 
-* Data Collection
-* Data Preprocessing
-* Model Training
-* Model Evaluation
-* Prediction on New Data
-* Model Serialization using Pickle
-* Flask Web Application Development
-* HTML Frontend Development
-* Deployment Preparation for Render Cloud
+Data Loading
 
----
+Data Validation
 
-# 📌 Problem Statement
+Train-Test Split
 
-Organizations often want to estimate an employee's salary based on their years of experience.
+Yeo-Johnson Transformation
 
-In this project, we use **Simple Linear Regression** to learn the relationship between:
+Constant Feature Removal
 
-### Independent Variable (X)
+Quasi-Constant Feature Removal
 
-Experience (Years)
+Hypothesis Testing / Feature Selection
 
-### Dependent Variable (Y)
+Training Data Balancing
 
-Salary
+Model Training
 
-After training the model, users can enter experience through a web page and receive the predicted salary instantly.
+Model Evaluation
 
----
+Confusion Matrix
 
-# 📊 Dataset Information
+Classification Report
 
-The dataset contains:
+ROC Curve Visualization
 
-| Feature    | Description                   |
-| ---------- | ----------------------------- |
-| Experience | Number of years of experience |
-| Salary     | Corresponding salary          |
+Prediction through a Web Interface
 
-### Dataset Size
+Logging of Pipeline Execution
 
-* Total Records: 30
-* Training Data: 24 Records (80%)
-* Testing Data: 6 Records (20%)
+The project is developed using Python, Pandas, NumPy, Scikit-Learn, XGBoost, Matplotlib, Seaborn, and Flask/HTML.
 
----
+📌 Problem Statement
 
-# 🤖 Machine Learning Algorithm Used
+Heart-disease datasets contain multiple patient-related attributes that can be used to build a classification model.
 
-## Simple Linear Regression
+The objective of this project is to process the available features, select relevant features, train multiple classification algorithms, and predict the target class for new input data.
 
-Simple Linear Regression is a supervised machine learning algorithm used to find the relationship between:
+Input
 
-* One Independent Variable (X)
-* One Dependent Variable (Y)
+The final model uses the following seven processed features:
 
-It fits the best straight line through the data points.
+age_yeo_trim
+sex_yeo_trim
+cp_yeo_trim
+thalach_yeo_trim
+oldpeak_yeo_trim
+slope_yeo_trim
+thal_yeo_trim
 
----
+Output
 
-# 📐 Mathematical Formula
+The trained classification model produces a predicted target class.
 
-The Simple Linear Regression equation is:
+📊 Dataset Information
 
-```text
-Y = mX + b
-```
+The current dataset contains:
 
-Where:
+Information
 
-* Y = Predicted Value
-* X = Input Feature (Experience)
-* m = Slope of the Line
-* b = Intercept
+Value
 
-### Example
+Total Records
 
-```text
-Salary = m × Experience + b
-```
+303
 
-The algorithm learns the values of m and b during training.
+Total Columns
 
----
+14
 
-# 📈 Model Training Process
+Input Features
 
-### Step 1: Import Required Libraries
+13
 
-```python
-import pandas as pd
-import numpy as np
-from sklearn.linear_model import LinearRegression
-```
+Target Column
 
-### Step 2: Load Dataset
+target
 
-```python
-df = pd.read_csv("salary_data.csv")
-```
+Missing Values
 
-### Step 3: Split Dataset
+0
 
-```python
-from sklearn.model_selection import train_test_split
+Training Records
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.2,
-    random_state=42
-)
-```
+242
 
-Training Records = 24
+Testing Records
 
-Testing Records = 6
+61
 
----
-
-### Step 4: Train Model
-
-```python
-model = LinearRegression()
-
-model.fit(X_train, y_train)
-```
-
-The model learns:
-
-* Slope (m)
-* Intercept (b)
-
----
-
-# 📊 Model Performance
-
-## Training Accuracy (R² Score)
-
-```text
-96%
-```
-
-## Testing Accuracy (R² Score)
-
-```text
-90%
-```
-
-The model performs well on both training and testing datasets, indicating good generalization.
-
----
-
-# 📚 Evaluation Metrics
-
-## 1. R² Score (Coefficient of Determination)
-
-R² Score measures how well the regression line fits the data.
-
-### Formula
-
-```text
-R² = 1 - (SSres / SStot)
-```
-
-Where:
-
-```text
-SSres = Σ(yactual - ypredicted)²
-
-SStot = Σ(yactual - ymean)²
-```
-
-### Interpretation
-
-| R² Score | Meaning            |
-| -------- | ------------------ |
-| 1.0      | Perfect Prediction |
-| 0.9+     | Excellent Model    |
-| 0.8+     | Good Model         |
-| 0.5      | Moderate           |
-| 0        | Poor Model         |
-
-### Project Result
-
-```text
-Training R² = 96%
-
-Testing R² = 90%
-```
-
----
-
-## 2. Mean Squared Error (MSE)
-
-MSE measures the average squared difference between actual and predicted values.
-
-### Formula
-
-```text
-MSE = (1/n) Σ(yactual - ypredicted)²
-```
-
-### Project Result
-
-```text
-Train Loss (MSE) = 150
-
-Test Loss (MSE) = 189
-```
-
-Lower MSE indicates better performance.
-
----
-
-## 3. Root Mean Squared Error (RMSE)
-
-RMSE is the square root of MSE.
-
-### Formula
-
-```text
-RMSE = √MSE
-```
-
-### Advantages
-
-* Easy to interpret
-* Same unit as target variable
-* Commonly used in regression problems
-
-Lower RMSE indicates better prediction accuracy.
-
----
-
-# 🔮 Prediction on New Data
-
-After training the model, predictions can be made on unseen data.
+The original input features include:
+
+age
+sex
+cp
+trestbps
+chol
+fbs
+restecg
+thalach
+exang
+oldpeak
+slope
+ca
+thal
+
+🔄 Machine Learning Pipeline
+
+The complete pipeline is:
+
+Dataset
+   ↓
+Data Validation
+   ↓
+Train / Test Split
+   ↓
+Yeo-Johnson Transformation
+   ↓
+Constant Feature Removal
+   ↓
+Quasi-Constant Feature Removal
+   ↓
+Hypothesis Testing
+   ↓
+Feature Selection
+   ↓
+Training Data Balancing
+   ↓
+Model Training
+   ↓
+Model Evaluation
+   ↓
+ROC Curve
+   ↓
+Prediction
+
+🧹 Data Preprocessing
+
+1. Train-Test Split
+
+The dataset is divided into:
+
+Training Data : 242 records
+Testing Data  : 61 records
+
+2. Yeo-Johnson Transformation
+
+The project applies a Yeo-Johnson transformation to the input features.
+
+The transformed features are represented with the _yeo_trim suffix.
 
 Example:
 
-```python
-experience = [[5]]
+age      → age_yeo_trim
+sex      → sex_yeo_trim
+cp       → cp_yeo_trim
 
-salary = model.predict(experience)
+🔍 Feature Selection
 
-print(salary)
-```
+The project performs multiple feature-selection steps.
 
-Output:
+1. Constant Feature Removal
 
-```text
-Predicted Salary
-```
+The following feature was removed:
 
-The model uses the learned regression equation to estimate the salary.
+fbs_yeo_trim
 
----
+Remaining features:
 
-# 💾 Model Serialization Using Pickle
+12
 
-After successful training, the model is saved into a Pickle file.
+2. Quasi-Constant Feature Removal
 
-### Saving Model
+The following features were removed:
 
-```python
-import pickle
+trestbps_yeo_trim
+chol_yeo_trim
+exang_yeo_trim
+ca_yeo_trim
 
-pickle.dump(model, open("SLR_MODEL.pkl", "wb"))
-```
+Remaining features:
 
-### Loading Model
+8
 
-```python
-model = pickle.load(open("model.pkl", "rb"))
-```
+3. Hypothesis Testing
 
----
+P-values are calculated for the selected features.
 
-# Why Use Pickle?
+The following feature was removed based on the logged hypothesis-testing result:
 
-### Advantages
+restecg_yeo_trim
 
-✅ Stores trained model permanently
+Final Features
 
-✅ No need to retrain every time
+The final model uses:
 
-✅ Faster application startup
+age_yeo_trim
+sex_yeo_trim
+cp_yeo_trim
+thalach_yeo_trim
+oldpeak_yeo_trim
+slope_yeo_trim
+thal_yeo_trim
 
-✅ Easy deployment
+Final number of features:
 
-✅ Saves computation time
+7
 
----
+⚖️ Training Data Balancing
 
-# 🌐 Flask Web Application
+Before balancing:
 
-Flask is a lightweight Python web framework used to build web applications.
+Class 1 : 133
+Class 0 : 109
+Total   : 242
 
-In this project Flask acts as a bridge between:
+After balancing:
 
-```text
-Frontend (HTML)
-        ↓
-Flask Backend
-        ↓
-Machine Learning Model
-        ↓
-Prediction Result
-```
+Class 1 : 133
+Class 0 : 133
+Total   : 266
 
----
+The test data remains separate from the training-data balancing process.
 
-# 📂 Project Structure
+🤖 Machine Learning Algorithms
 
-```text
-Salary-Prediction-Project
+The project evaluates eight classification algorithms:
+
+K-Nearest Neighbors
+
+Gaussian Naive Bayes
+
+Logistic Regression
+
+Decision Tree
+
+Random Forest
+
+AdaBoost
+
+Gradient Boosting
+
+XGBoost
+
+📈 Model Performance
+
+The current test run produced the following accuracy values:
+
+Model
+
+Test Accuracy
+
+K-Nearest Neighbors
+
+57.38%
+
+Gaussian Naive Bayes
+
+80.33%
+
+Logistic Regression
+
+59.02%
+
+Decision Tree
+
+60.66%
+
+Random Forest
+
+50.82%
+
+AdaBoost
+
+59.02%
+
+Gradient Boosting
+
+62.30%
+
+XGBoost
+
+55.74%
+
+These values represent the current test-set results from this project run.
+
+📋 Model Evaluation
+
+Each model generates:
+
+Accuracy
+
+Confusion Matrix
+
+Classification Report
+
+The classification report contains:
+
+Precision
+
+Recall
+
+F1-score
+
+Support
+
+🧮 Example: Naive Bayes Evaluation
+
+The current Naive Bayes run produced:
+
+Test Accuracy : 0.8032786885245902
+
+Confusion Matrix
+
+[[25  4]
+ [ 8 24]]
+
+Classification Report
+
+              precision    recall  f1-score   support
+
+0                0.76       0.86      0.81        29
+1                0.86       0.75      0.80        32
+
+accuracy                              0.80        61
+macro avg          0.81       0.81      0.80        61
+weighted avg       0.81       0.80      0.80        61
+
+📉 ROC Curve
+
+The project generates an ROC curve visualization for:
+
+KNN
+LR
+NB
+DT
+RF
+ADA
+GB
+XGB
+
+The current implementation generates the ROC curves using the model predictions.
+
+For a production-level ROC-AUC evaluation, probability or decision scores should be used when supported by the model.
+
+📝 Logging
+
+The project maintains separate log files for different stages.
+
+logs/
 │
-├── SLR_MODEL.pkl
-├── app.py
+├── main.log
+├── fs.log
+├── yeo_timing.log
+└── all_models.log
+
+main.log
+
+Stores:
+
+Dataset shape
+
+Null-value information
+
+Train/test data size
+
+Class distribution
+
+Balancing information
+
+Main model output
+
+fs.log
+
+Stores:
+
+Feature-selection information
+
+Constant-feature removal
+
+Quasi-constant-feature removal
+
+P-values
+
+Hypothesis-testing results
+
+yeo_timing.log
+
+Stores:
+
+Feature names before transformation
+
+Feature names after transformation
+
+all_models.log
+
+Stores:
+
+KNN results
+
+Naive Bayes results
+
+Logistic Regression results
+
+Decision Tree results
+
+Random Forest results
+
+AdaBoost results
+
+Gradient Boosting results
+
+XGBoost results
+
+ROC execution information
+
+🌐 Web Application
+
+The project includes an HTML-based prediction interface.
+
+The user enters the seven final processed features:
+
+Age
+Sex
+Chest Pain Type
+Maximum Heart Rate
+ST Depression
+Slope
+Thal
+
+The form sends the values to the backend, which can then pass them to the trained model and return the prediction.
+
+📂 Project Structure
+
+ML_HEART_project/
+│
+├── main.py
+├── all_models.py
+├── fs.py
+├── yeo_timing.py
+├── log_code.py
+├── index.html
 ├── requirements.txt
-├── Procfile
 │
-├── templates
-│   └── index.html
-│
-├── static
-│   └── style.css
+├── logs/
+│   ├── main.log
+│   ├── fs.log
+│   ├── yeo_timing.log
+│   └── all_models.log
 │
 └── README.md
-```
 
----
+If Flask is used with Jinja templates, the HTML file can be placed under:
 
-# ⚙️ app.py Explanation
+templates/
+└── index.html
 
-The app.py file is the backend of the application.
+⚙️ Installation
 
-### Responsibilities
+Step 1: Clone the Repository
 
-✔ Load Trained Model
+git clone <your-github-repository-url>
 
-✔ Receive User Input
+Step 2: Open the Project
 
-✔ Convert Input into Required Format
+cd ML_HEART_project
 
-✔ Predict Salary
+Step 3: Create Virtual Environment
 
-✔ Send Prediction to Frontend
-
----
-
-### Basic Workflow
-
-```text
-User enters Experience
-          ↓
-HTML Form Submit
-          ↓
-Flask Receives Data
-          ↓
-Model Predicts Salary
-          ↓
-Result Displayed
-```
-
----
-
-# 📝 HTML Frontend Explanation
-
-The HTML page provides the user interface.
-
-### Responsibilities
-
-✔ Accept Experience Input
-
-✔ Send Data to Flask
-
-✔ Display Predicted Salary
-
----
-
-### Example Components
-
-```html
-<input type="text">
-
-<button>
-Predict
-</button>
-```
-
----
-
-### User Flow
-
-```text
-Open Website
-      ↓
-Enter Experience
-      ↓
-Click Predict
-      ↓
-Prediction Generated
-      ↓
-Result Displayed
-```
-
----
-
-# 📦 Virtual Environment
-
-A Virtual Environment is an isolated Python environment.
-
-### Creation
-
-```bash
 python -m venv venv
-```
 
-### Activate
+Step 4: Activate Virtual Environment
 
-Windows:
+Windows
 
-```bash
 venv\Scripts\activate
-```
 
----
+Step 5: Install Dependencies
 
-# Why Use Virtual Environment?
-
-### Advantages
-
-✅ Dependency Isolation
-
-✅ Version Management
-
-✅ Project Independence
-
-✅ Easy Deployment
-
-✅ Cleaner Development Environment
-
----
-
-# 📋 requirements.txt
-
-This file contains all required Python packages.
-
-Example:
-
-```text
-Flask
-numpy
-pandas
-scikit-learn
-pickle-mixin
-gunicorn
-```
-
----
-
-# Advantages of requirements.txt
-
-### 1. Easy Installation
-
-```bash
 pip install -r requirements.txt
-```
 
-### 2. Reproducibility
+▶️ Run the Machine Learning Pipeline
 
-Every developer gets the same environment.
+From the project directory:
 
-### 3. Deployment Friendly
+python main.py
 
-Cloud platforms install packages automatically.
+The pipeline processes the dataset, performs feature selection, balances the training data, trains the models, evaluates them, and writes execution information to the logs directory.
 
-### 4. Version Control
+🖥️ Run the Web Application
 
-Ensures consistent library versions.
-
----
-
-# 🚀 Procfile Explanation
-
-A Procfile tells cloud platforms how to run the application.
+If the project uses Flask, start the Flask application using the command defined in your backend.
 
 Example:
 
-```text
-web: gunicorn app:app
-```
+python app.py
 
----
+Then open the local application URL shown by Flask in the browser.
 
-# Why Procfile is Important?
+🛠️ Technologies Used
 
-### Advantages
+Python
 
-✅ Required for deployment
+Pandas
 
-✅ Defines startup command
+NumPy
 
-✅ Helps Render execute Flask application
+Scikit-Learn
 
-✅ Simplifies cloud deployment
+XGBoost
 
----
+Matplotlib
 
-# ☁️ Deployment on Render
+Seaborn
 
-This project is prepared for deployment on Render Cloud.
+Flask
 
-### Deployment Steps
+HTML
 
-1. Push code to GitHub
-2. Create Render account
-3. Connect GitHub repository
-4. Select Web Service
-5. Add requirements.txt
-6. Add Procfile
-7. Deploy Application
+CSS
 
-Render automatically:
+Git
 
-* Installs dependencies
-* Creates build
-* Starts Flask server
-* Hosts application online
+GitHub
 
----
+🎯 Future Enhancements
 
-# 🛠️ Technologies Used
+Improve model hyperparameter tuning
 
-* Python
-* Machine Learning
-* Scikit-Learn
-* Pandas
-* NumPy
-* Flask
-* HTML
-* CSS
-* Pickle
-* Git
-* GitHub
-* Render Cloud
+Add cross-validation
 
----
+Add proper ROC-AUC calculation using probability/decision scores
 
-# 🎯 Future Enhancements
+Add model comparison visualization
 
-* Responsive UI Design
-* Database Integration
-* User Authentication
-* Multiple Feature Prediction
-* Docker Containerization
-* CI/CD Pipeline
-* AWS Deployment
-* REST API Integration
+Save trained models using Pickle or Joblib
 
----
+Add prediction API
 
-# 👨‍💻 Author
+Add database integration
 
-### Sai Chandrika Vanka
+Improve frontend validation
+
+Add Docker support
+
+Add CI/CD pipeline
+
+Deploy the application to a cloud platform
+
+👨‍💻 Author
+
+Sai Chandrika Vanka
 
 Java Full Stack Developer | Machine Learning Enthusiast
 
-📧 Email:
+📧 Email: vankasaichandrika@gmail.com
 
-[vankasaichandrika@gmail.com](mailto:vankasaichandrika@gmail.com)
+⚠️ Disclaimer
 
-### LinkedIn
+This project is intended for machine-learning development and educational purposes.
 
-(Add your LinkedIn profile URL here)
-
-Example:
-
-https://www.linkedin.com/in/your-profile/
-
----
-
-# 🤝 Connect With Me
-
-If you have any suggestions, improvements, or collaboration opportunities, feel free to connect with me.
-
-📧 Email: [vankasaichandrika@gmail.com](mailto:vankasaichandrika@gmail.com)
-
----
-
-# ⭐ Support
-
-If you found this project helpful:
-
-⭐ Star the Repository
-
-🍴 Fork the Repository
-
-📢 Share with Others
-
-Happy Learning and Happy Coding!
+The predictions generated by this application should not be treated as a medical diagnosis or as a substitute for professional medical advice.
