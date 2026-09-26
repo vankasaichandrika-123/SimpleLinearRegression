@@ -1,9 +1,9 @@
-ML_HEART_project
+**ML_HEART_project
 
 ❤️ Heart Disease Prediction Machine Learning Project
 
 🚀 Project Overview
-
+**
 This project is a Machine Learning classification application that analyzes heart-disease data and predicts the target outcome using multiple classification algorithms.
 
 The project covers the complete Machine Learning workflow:
@@ -39,8 +39,8 @@ Prediction through a Web Interface
 Logging of Pipeline Execution
 
 The project is developed using Python, Pandas, NumPy, Scikit-Learn, XGBoost, Matplotlib, Seaborn, and Flask/HTML.
-
-📌 Problem Statement
+**
+📌 Problem Statement**
 
 Heart-disease datasets contain multiple patient-related attributes that can be used to build a classification model.
 
@@ -114,7 +114,7 @@ slope
 ca
 thal
 
-🔄 Machine Learning Pipeline
+**🔄 Machine Learning Pipeline**
 
 The complete pipeline is:
 
@@ -144,7 +144,7 @@ ROC Curve
    ↓
 Prediction
 
-🧹 Data Preprocessing
+**🧹 Data Preprocessing**
 
 1. Train-Test Split
 
@@ -165,7 +165,7 @@ age      → age_yeo_trim
 sex      → sex_yeo_trim
 cp       → cp_yeo_trim
 
-🔍 Feature Selection
+**🔍 Feature Selection**
 
 The project performs multiple feature-selection steps.
 
@@ -177,9 +177,9 @@ fbs_yeo_trim
 
 Remaining features:
 
-12
+**12
 
-2. Quasi-Constant Feature Removal
+2. Quasi-Constant Feature Removal**
 
 The following features were removed:
 
@@ -192,8 +192,8 @@ Remaining features:
 
 8
 
-3. Hypothesis Testing
-
+**3. Hypothesis Testing
+**
 P-values are calculated for the selected features.
 
 The following feature was removed based on the logged hypothesis-testing result:
@@ -211,14 +211,14 @@ thalach_yeo_trim
 oldpeak_yeo_trim
 slope_yeo_trim
 thal_yeo_trim
-
+**
 Final number of features:
-
+**
 7
 
-⚖️ Training Data Balancing
+**⚖️ Training Data Balancing
 
-Before balancing:
+Before balancing:**
 
 Class 1 : 133
 Class 0 : 109
@@ -231,8 +231,8 @@ Class 0 : 133
 Total   : 266
 
 The test data remains separate from the training-data balancing process.
-
-🤖 Machine Learning Algorithms
+**
+🤖 Machine Learning Algorithms**
 
 The project evaluates eight classification algorithms:
 
@@ -251,8 +251,8 @@ AdaBoost
 Gradient Boosting
 
 XGBoost
-
-📈 Model Performance
+**
+📈 Model Performance**
 
 The current test run produced the following accuracy values:
 
@@ -264,9 +264,9 @@ K-Nearest Neighbors
 
 57.38%
 
-Gaussian Naive Bayes
+**Gaussian Naive Bayes
 
-80.33%
+80.33%**
 
 Logistic Regression
 
@@ -294,10 +294,10 @@ XGBoost
 
 These values represent the current test-set results from this project run.
 
-📋 Model Evaluation
+**📋 Model Evaluation
 
 Each model generates:
-
+**
 Accuracy
 
 Confusion Matrix
@@ -314,9 +314,9 @@ F1-score
 
 Support
 
-🧮 Example: Naive Bayes Evaluation
+**🧮 Example: Naive Bayes Evaluation
 
-The current Naive Bayes run produced:
+The current Naive Bayes run produced:**
 
 Test Accuracy : 0.8032786885245902
 
@@ -336,8 +336,8 @@ accuracy                              0.80        61
 macro avg          0.81       0.81      0.80        61
 weighted avg       0.81       0.80      0.80        61
 
-📉 ROC Curve
-
+**📉 ROC Curve
+**
 The project generates an ROC curve visualization for:
 
 KNN
@@ -353,8 +353,8 @@ The current implementation generates the ROC curves using the model predictions.
 
 For a production-level ROC-AUC evaluation, probability or decision scores should be used when supported by the model.
 
-📝 Logging
-
+**📝 Logging
+**
 The project maintains separate log files for different stages.
 
 logs/
@@ -366,8 +366,8 @@ logs/
 
 main.log
 
-Stores:
-
+**Stores:
+**
 Dataset shape
 
 Null-value information
@@ -382,7 +382,7 @@ Main model output
 
 fs.log
 
-Stores:
+**Stores:**
 
 Feature-selection information
 
@@ -396,7 +396,7 @@ Hypothesis-testing results
 
 yeo_timing.log
 
-Stores:
+**Stores:**
 
 Feature names before transformation
 
@@ -404,8 +404,8 @@ Feature names after transformation
 
 all_models.log
 
-Stores:
-
+**Stores:
+**
 KNN results
 
 Naive Bayes results
@@ -424,7 +424,7 @@ XGBoost results
 
 ROC execution information
 
-🌐 Web Application
+**🌐 Web Application**
 
 The project includes an HTML-based prediction interface.
 
@@ -439,8 +439,8 @@ Slope
 Thal
 
 The form sends the values to the backend, which can then pass them to the trained model and return the prediction.
-
-📂 Project Structure
+**
+📂 Project Structure**
 
 ML_HEART_project/
 │
@@ -465,7 +465,7 @@ If Flask is used with Jinja templates, the HTML file can be placed under:
 templates/
 └── index.html
 
-⚙️ Installation
+**⚙️ Installation**
 
 Step 1: Clone the Repository
 
@@ -497,7 +497,7 @@ python main.py
 
 The pipeline processes the dataset, performs feature selection, balances the training data, trains the models, evaluates them, and writes execution information to the logs directory.
 
-🖥️ Run the Web Application
+**🖥️ Run the Web Application**
 
 If the project uses Flask, start the Flask application using the command defined in your backend.
 
@@ -507,7 +507,7 @@ python app.py
 
 Then open the local application URL shown by Flask in the browser.
 
-🛠️ Technologies Used
+**🛠️ Technologies Used**
 
 Python
 
@@ -533,7 +533,7 @@ Git
 
 GitHub
 
-🎯 Future Enhancements
+**🎯 Future Enhancements**
 
 Improve model hyperparameter tuning
 
@@ -557,15 +557,15 @@ Add CI/CD pipeline
 
 Deploy the application to a cloud platform
 
-👨‍💻 Author
+**👨‍💻 Author**
 
 Sai Chandrika Vanka
 
-Java Full Stack Developer | Machine Learning Enthusiast
+Full Stack Developer | Machine Learning Enthusiast
 
 📧 Email: vankasaichandrika@gmail.com
 
-⚠️ Disclaimer
+**⚠️ Disclaimer**
 
 This project is intended for machine-learning development and educational purposes.
 
